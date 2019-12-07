@@ -43,8 +43,8 @@ public class PrisonController {
     @ResponseBody
     public Prisoner addPrisoner(@RequestBody Prisoner newPrisoner){
       String id = String.valueOf(new Random().nextInt());
-      Prisoner prisoner = new Prisoner(id, newPrisoner.getNationalID(), newPrisoner.getFullName(),
-              newPrisoner.getDateOfBirth(), newPrisoner.getAddress(), newPrisoner.getPrison(),
+      Prisoner prisoner = new Prisoner(id, newPrisoner.getNationalID(), newPrisoner.getName(),
+              newPrisoner.getSurname(), newPrisoner.getDateOfBirth(), newPrisoner.getAddress(), newPrisoner.getPrison(),
               newPrisoner.getGender(), newPrisoner.getEducation(), newPrisoner.getStatus(),
               newPrisoner.getOffence(), newPrisoner.getDateIn(), newPrisoner.getFileNumber());
       prisonerRepository.insert(prisoner);

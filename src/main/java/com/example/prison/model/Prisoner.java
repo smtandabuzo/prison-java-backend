@@ -17,7 +17,8 @@ public class Prisoner {
     @Id
     private String id;
     private Integer nationalID;
-    private String fullName;
+    private String name;
+    private String surname;
     private String dateOfBirth;
     private String address;
     private String prison;

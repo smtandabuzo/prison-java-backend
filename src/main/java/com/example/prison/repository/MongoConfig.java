@@ -9,11 +9,11 @@ import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 public class MongoConfig extends AbstractMongoConfiguration{
     @Override
     protected String getDatabaseName() {
-        return "heroku_jvjv11jh";
+        return "prison-backend";
     }
 
     @Override
     public MongoClient mongoClient(){
-        return new MongoClient("ds127968.mlab.com", 27968);
+        return new MongoClient("localhost", 27017);
     }
 }
