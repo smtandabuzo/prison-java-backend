@@ -43,9 +43,9 @@ public class PrisonController {
     @ResponseBody
     public Prisoner addPrisoner(@RequestBody Prisoner newPrisoner){
       String id = String.valueOf(new Random().nextInt());
-      Prisoner prisoner = new Prisoner(id, newPrisoner.getNationalID(), newPrisoner.getName(),
-              newPrisoner.getSurname(), newPrisoner.getDateOfBirth(), newPrisoner.getAddress(), newPrisoner.getPrison(),
-              newPrisoner.getGender(), newPrisoner.getEducation(), newPrisoner.getStatus(),
+      Prisoner prisoner = new Prisoner(id, newPrisoner.getNationalID(), newPrisoner.getFirstname(),
+              newPrisoner.getLastname(), newPrisoner.getDateOfBirth(),
+              newPrisoner.getPrison(), newPrisoner.getGender(), newPrisoner.getEducation(), newPrisoner.getStatus(),
               newPrisoner.getOffence(), newPrisoner.getDateIn(), newPrisoner.getFileNumber());
       prisonerRepository.insert(prisoner);
       return prisoner;
@@ -61,10 +61,10 @@ public class PrisonController {
     @ResponseBody
     public Court addCourt(@RequestBody Court newCourt){
         String id = String.valueOf(new Random().nextInt());
-        Court court = new Court(id, newCourt.getNationalID(),
-                newCourt.getFileNumber(), newCourt.getDateOfTrial(),
-                newCourt.getSentence(), newCourt.getLocation(),
-                newCourt.getCreatedAt(), newCourt.getUpdatedAt());
+        Court court = new Court(id,
+                newCourt.getCourtDate(),
+                newCourt.getCourtName(),
+                newCourt.getPresidingJudge(), newCourt.getAttorney());
         courtRepository.insert(court);
         return court;
     }
@@ -79,11 +79,11 @@ public class PrisonController {
     @ResponseBody
     public Case addCase(@RequestBody Case newCase){
         String id = String.valueOf(new Random().nextInt());
-        Case addedCase = new Case(id, newCase.getNationalID(),
-                newCase.getFileNumber(), newCase.getDateOfTrial(),
-                newCase.getSentence(), newCase.getLocation(),
-                newCase.getFullName(),
-                newCase.getCreatedAt(), newCase.getUpdatedAt());
+        Case addedCase = new Case(id,
+                newCase.getCaseNumber(),
+                newCase.getCaseOutcome(),
+                newCase.getPrisonerName(),
+                newCase.getOffence());
         caseRepository.insert(addedCase);
         return addedCase;
     }
@@ -100,9 +100,10 @@ public class PrisonController {
         String id = String.valueOf(new Random().nextInt());
         Transfer transfer = new Transfer(id, newTransfer.getNationalID(),
                 newTransfer.getFileNumber(), newTransfer.getToPrison(),
-                newTransfer.getDateOfTransfer(), newTransfer.getCreatedAt(),
-                newTransfer.getUpdatedAt(),
-                newTransfer.getFromPrison());
+                newTransfer.getTransferDate(), newTransfer.getArrivalDate(),
+                newTransfer.getReceivingOfficer(), newTransfer.getReleasingOfficer(),
+                newTransfer.getFromPrison(), newTransfer.getToPrison(),
+                newTransfer.getPrisonerName());
         transferRepository.insert(transfer);
         return transfer;
     }

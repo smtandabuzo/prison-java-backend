@@ -14,11 +14,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Transfer {
     @Id
     private String id;
-    private Integer nationalID;
-    private Integer fileNumber;
+    private String nationalID;
+    private String fileNumber;
     private String toPrison;
-    private String dateOfTransfer;
-    private String createdAt;
-    private String updatedAt;
+    private String transferDate;
+    private String arrivalDate;
     private String fromPrison;
+    private String releasingOfficer;
+    private String receivingOfficer;
+    private String transferReason;
+    private String prisonerName;
 }

@@ -16,11 +16,8 @@ import java.util.Date;
 public class Court {
     @Id
     private String id;
-    private Integer nationalID;
-    private Integer fileNumber;
-    private String dateOfTrial;
-    private String sentence;
-    private String location;
-    private String createdAt;
-    private String updatedAt;
+    private String courtDate;
+    private String courtName;
+    private String presidingJudge;
+    private String attorney;
 }

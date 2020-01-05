@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.Date;
 
@@ -16,11 +17,11 @@ import java.util.Date;
 public class Prisoner {
     @Id
     private String id;
-    private Integer nationalID;
-    private String name;
-    private String surname;
+    private String nationalID;
+    private String firstname;
+    private String lastname;
     private String dateOfBirth;
-    private String address;
+    //private Address address;
     private String prison;
     private String gender;
     private String education;
@@ -28,4 +29,5 @@ public class Prisoner {
     private String offence;
     private String dateIn;
     private Integer fileNumber;
+
 }

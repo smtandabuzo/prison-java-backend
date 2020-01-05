@@ -1,5 +1,6 @@
 package com.example.prison.repository;
 
+import com.example.prison.model.Address;
 import com.example.prison.model.Prisoner;
 import org.springframework.data.mongodb.repository.MongoRepository;
 

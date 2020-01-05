@@ -10,16 +10,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
  */
 @AllArgsConstructor
 @Data
+
 @Document(collection = "cases")
 public class Case {
     @Id
     private String id;
-    private Integer nationalID;
-    private Integer fileNumber;
-    private String dateOfTrial;
-    private String sentence;
-    private String location;
-    private String fullName;
-    private String createdAt;
-    private String updatedAt;
+    private String caseNumber;
+    private String caseOutcome;
+    private String prisonerName;
+    private String offence;
 }
