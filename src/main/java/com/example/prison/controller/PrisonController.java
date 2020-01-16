@@ -35,7 +35,7 @@ public class PrisonController {
 
     @GetMapping("/health")
     public String getHealth(){
-        return "Welcome to the prison backend service";
+        return "Welcome to the prison java backend service";
     }
 
     @GetMapping("/prisoners")
