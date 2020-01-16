@@ -33,6 +33,11 @@ public class PrisonController {
     @Autowired
     TransferRepository transferRepository;
 
+    @GetMapping("/health")
+    public String getHealth(){
+        return "Welcome to the prison backend service";
+    }
+
     @GetMapping("/prisoners")
     public List<Prisoner> getPrisoners(){
         List<Prisoner> prisonerList = prisonerRepository.findAll();
