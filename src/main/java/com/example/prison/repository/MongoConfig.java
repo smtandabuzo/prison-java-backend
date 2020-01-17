@@ -1,6 +1,7 @@
 package com.example.prison.repository;
 
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 
 /**
@@ -14,6 +15,8 @@ public class MongoConfig extends AbstractMongoConfiguration{
 
     @Override
     public MongoClient mongoClient(){
-        return new MongoClient("localhost", 27017);
+        MongoClientURI uri = new MongoClientURI("mongodb://heroku_jvjv11jh:ttam271keqvft9ql7vrt1rs6di@ds127968.mlab.com:27968/heroku_jvjv11jh");
+        MongoClient client = new MongoClient(uri);
+        return client;
     }
 }
