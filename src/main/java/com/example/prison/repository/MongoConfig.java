@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 public class MongoConfig extends AbstractMongoConfiguration{
     @Override
     protected String getDatabaseName() {
-        return "prison-backend";
+        return "heroku_jvjv11jh";
     }
 
     @Override
