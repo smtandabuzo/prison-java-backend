@@ -17,6 +17,7 @@ import java.util.Random;
 /**
  * Created by smtandabuzo on 2019/09/10.
  */
+@CrossOrigin(maxAge = 3600)
 @RestController
 @RequestMapping("prison-backend")
 public class PrisonController {
